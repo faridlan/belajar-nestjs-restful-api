@@ -13,7 +13,7 @@ export class PrismaService
     @Inject(WINSTON_MODULE_PROVIDER) private readonly logger: Logger,
   ) {
     const adapter = new PrismaPg({
-      conntectionString: process.env.DATABASE_URL as string,
+      connectionString: process.env.DATABASE_URL as string,
     });
 
     super({
