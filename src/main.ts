@@ -15,6 +15,14 @@ async function bootstrap() {
     .setTitle('Contacts Management API')
     .setDescription('The Contacts Management API description')
     .setVersion('1.0')
+    .addApiKey(
+      {
+        type: 'apiKey',
+        name: 'Authorization',
+        in: 'header',
+      },
+      'Authorization',
+    )
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

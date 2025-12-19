@@ -3,7 +3,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "username" : "Nullhakim",
+  "username" : "",
   "name" : "Faridlan Nullhakim",
   "password" : "rahasia"
 }
@@ -16,13 +16,13 @@ Accept: application/json
 
 {
   "username" : "Nullhakim",
-  "password" : "rahasia12345"
+  "password" : "rahasia"
 }
 
 ### Get User
 GET http://localhost:3000/api/users/current
 Accept: application/json
-Authorization: cc1a57be-b2cb-49bb-9584-29d84254c09e
+Authorization: b6eebbc5-af1c-4c85-940f-7edf2cdb4edb
 
 ### Logout User
 DELETE http://localhost:3000/api/users/current
@@ -33,7 +33,7 @@ Authorization: f4c09eac-4215-485c-864d-a0321580b903
 PATCH http://localhost:3000/api/users/current
 Accept: application/json
 Content-Type: application/json
-Authorization: f4c09eac-4215-485c-864d-a0321580b903
+Authorization: 5a917cc1-bc3d-43a8-a531-1d668dbe7e54
 
 {
   "password" : "rahasia12345"
