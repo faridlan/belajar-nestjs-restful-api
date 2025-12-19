@@ -17,6 +17,7 @@ import { WebResponse } from 'src/model/web.model';
 import { UserService } from './user.service';
 import { Auth } from 'src/common/auth.decorator';
 import { User } from '@prisma/client';
+import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 
 @Controller('/api/users')
 export class UserController {
@@ -34,7 +35,18 @@ export class UserController {
     };
   }
 
+  //Login Controller
   @Post('/login')
+  @ApiOperation({
+    summary: 'User Login',
+    description: 'Authenticate a user and obtain an access token.',
+  })
+  @ApiResponse({
+    status: 200,
+    description:
+      'Successful login returns user information along with a token.',
+    type: UserResponse,
+  })
   @HttpCode(200)
   async login(
     @Body() request: LoginUserRequest,
@@ -46,7 +58,17 @@ export class UserController {
     };
   }
 
+  //Get Current User Controller
   @Get('/current')
+  @ApiOperation({
+    summary: 'Get Current User',
+    description: 'Retrieve information about the currently authenticated user.',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'Successful retrieval of current user information.',
+    type: UserResponse,
+  })
   @HttpCode(200)
   async get(@Auth() user: User): Promise<WebResponse<UserResponse>> {
     const result = await this.userService.get(user);
