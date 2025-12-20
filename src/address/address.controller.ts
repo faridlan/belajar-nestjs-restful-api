@@ -13,19 +13,27 @@ import { AddressService } from './address.service';
 import { User } from '@prisma/client';
 import {
   AddressResponse,
-  CreateAddressRequest,
   GetAddressRequest,
   RemoveAddressRequest,
-  UpdateAddressRequest,
 } from 'src/model/address.model';
 import { Auth } from 'src/common/auth.decorator';
 import { WebResponse } from 'src/model/web.model';
+import { CreateAddressSwagger } from 'src/common/swagger/address/create.swagger';
+import {
+  CreateAddressRequest,
+  UpdateAddressRequest,
+} from 'src/dto/address.dto';
+import { GetAddressSwagger } from 'src/common/swagger/address/get.swagger';
+import { UpdateAddressRequestSwagger } from 'src/common/swagger/address/update.swagger';
+import { DeleteAddressSwagger } from 'src/common/swagger/address/delete.swagger';
+import { ListAddressSwagger } from 'src/common/swagger/address/list.swagger';
 
 @Controller('/api/contacts/:contactId/addresses')
 export class AddressController {
   constructor(private addressService: AddressService) {}
 
   @Post()
+  @CreateAddressSwagger()
   @HttpCode(200)
   async create(
     @Auth() user: User,
@@ -40,6 +48,7 @@ export class AddressController {
   }
 
   @Get('/:addressId')
+  @GetAddressSwagger()
   @HttpCode(200)
   async get(
     @Auth() user: User,
@@ -57,6 +66,7 @@ export class AddressController {
   }
 
   @Put('/:addressId')
+  @UpdateAddressRequestSwagger()
   @HttpCode(200)
   async update(
     @Auth() user: User,
@@ -73,6 +83,7 @@ export class AddressController {
   }
 
   @Delete('/:addressId')
+  @DeleteAddressSwagger()
   @HttpCode(200)
   async remove(
     @Auth() user: User,
@@ -92,6 +103,7 @@ export class AddressController {
   }
 
   @Get('')
+  @ListAddressSwagger()
   @HttpCode(200)
   async list(
     @Auth() user: User,

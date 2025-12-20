@@ -22,7 +22,7 @@ Accept: application/json
 ### Get User
 GET http://localhost:3000/api/users/current
 Accept: application/json
-Authorization: b6eebbc5-af1c-4c85-940f-7edf2cdb4edb
+Authorization: 5a917cc1-bc3d-43a8-a531-1d668dbe7e54
 
 ### Logout User
 DELETE http://localhost:3000/api/users/current
@@ -43,7 +43,7 @@ Authorization: 5a917cc1-bc3d-43a8-a531-1d668dbe7e54
 POST http://localhost:3000/api/contacts
 Content-Type: application/json
 Accept: application/json
-Authorization: 051e0dd1-7ef4-43c0-866d-f3c0b2f212f6
+Authorization: 5a917cc1-bc3d-43a8-a531-1d668dbe7e54
 
 {
   "first_name" : "Joko",
@@ -56,7 +56,7 @@ Authorization: 051e0dd1-7ef4-43c0-866d-f3c0b2f212f6
 PUT http://localhost:3000/api/contacts/91
 Content-Type: application/json
 Accept: application/json
-Authorization: 051e0dd1-7ef4-43c0-866d-f3c0b2f212f6
+Authorization: 5a917cc1-bc3d-43a8-a531-1d668dbe7e54
 
 {
   "first_name" : "Budi",
@@ -67,27 +67,27 @@ Authorization: 051e0dd1-7ef4-43c0-866d-f3c0b2f212f6
 
 
 ### Get contact
-GET http://localhost:3000/api/contacts/91
+GET http://localhost:3000/api/contacts/242
 Accept: application/json
-Authorization: 051e0dd1-7ef4-43c0-866d-f3c0b2f212f6
+Authorization: 5a917cc1-bc3d-43a8-a531-1d668dbe7e54
 
 ### Delete contact
-DELETE http://localhost:3000/api/contacts/90
+DELETE http://localhost:3000/api/contacts/241
 Accept: application/json
-Authorization: 051e0dd1-7ef4-43c0-866d-f3c0b2f212f6
+Authorization: 5a917cc1-bc3d-43a8-a531-1d668dbe7e54
 
 
 ### Search contact
-GET http://localhost:3000/api/contacts?email=bud
+GET http://localhost:3000/api/contacts
 Accept: application/json
-Authorization: 051e0dd1-7ef4-43c0-866d-f3c0b2f212f6
+Authorization: 5a917cc1-bc3d-43a8-a531-1d668dbe7e54
 
 
 ### Create Address
-POST http://localhost:3000/api/contacts/91/addresses
+POST http://localhost:3000/api/contacts/242/addresses
 Content-Type: application/json
 Accept: application/json
-Authorization: 051e0dd1-7ef4-43c0-866d-f3c0b2f212f6
+Authorization: 5a917cc1-bc3d-43a8-a531-1d668dbe7e54
 
 {
   "street" : "jalan contoh",
@@ -98,14 +98,14 @@ Authorization: 051e0dd1-7ef4-43c0-866d-f3c0b2f212f6
 }
 
 ### Get Address
-GET http://localhost:3000/api/contacts/91/addresses/23
+GET http://localhost:3000/api/contacts/242/addresses/113
 Accept: application/json
-Authorization: 051e0dd1-7ef4-43c0-866d-f3c0b2f212f6
+Authorization: 5a917cc1-bc3d-43a8-a531-1d668dbe7e54
 
 ### List Address
-GET http://localhost:3000/api/contacts/91/addresses
+GET http://localhost:3000/api/contacts/242/addresses
 Accept: application/json
-Authorization: 051e0dd1-7ef4-43c0-866d-f3c0b2f212f6
+Authorization: 5a917cc1-bc3d-43a8-a531-1d668dbe7e54
 
 ### Update Address
 PUT http://localhost:3000/api/contacts/91/addresses/23
