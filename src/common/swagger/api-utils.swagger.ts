@@ -1,6 +1,7 @@
 import { applyDecorators } from '@nestjs/common';
 import {
   ApiBadRequestResponse,
+  ApiForbiddenResponse,
   ApiNotFoundResponse,
   ApiSecurity,
   ApiUnauthorizedResponse,
@@ -33,6 +34,15 @@ export function ApiNotFoundResponseSwagger() {
     ApiNotFoundResponse({
       description: 'Not Found',
       example: { errors: 'Not Found' },
+    }),
+  );
+}
+
+export function ApiForbiddenResponseSwagger() {
+  return applyDecorators(
+    ApiForbiddenResponse({
+      description: 'Forbidden',
+      example: { errors: 'Only admin can run seeder' },
     }),
   );
 }

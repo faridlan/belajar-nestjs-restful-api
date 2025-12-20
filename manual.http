@@ -141,7 +141,7 @@ Accept: application/json
 POST http://localhost:3000/api/seeder/run
 Content-Type: application/json
 Accept: application/json
-Authorization: 09342642-a324-44b2-8da2-321e93c6e822
+Authorization: 066cddd6-95e8-41fc-8155-e06c22c25a95
 
 ### Clear Seeder
 DELETE http://localhost:3000/api/seeder/clear

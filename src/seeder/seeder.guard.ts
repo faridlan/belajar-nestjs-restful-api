@@ -4,7 +4,6 @@ import {
   CanActivate,
   ExecutionContext,
   Injectable,
-  ForbiddenException,
   HttpException,
 } from '@nestjs/common';
 import { User } from '@prisma/client';
@@ -16,7 +15,7 @@ export class SeederGuard implements CanActivate {
     const user: User | undefined = request.user;
 
     if (!user) {
-      throw new ForbiddenException('Unauthorized');
+      throw new HttpException('Unauthorized', 401);
     }
 
     // OPTION 1: allow only specific username
