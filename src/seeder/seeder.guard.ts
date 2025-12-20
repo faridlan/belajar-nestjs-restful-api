@@ -5,6 +5,7 @@ import {
   ExecutionContext,
   Injectable,
   ForbiddenException,
+  HttpException,
 } from '@nestjs/common';
 import { User } from '@prisma/client';
 
@@ -20,7 +21,7 @@ export class SeederGuard implements CanActivate {
 
     // OPTION 1: allow only specific username
     if (user.username !== 'admin') {
-      throw new ForbiddenException('Only admin can run seeder');
+      throw new HttpException('Only admin can run seeder', 403);
     }
 
     return true;

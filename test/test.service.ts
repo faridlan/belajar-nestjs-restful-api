@@ -112,7 +112,7 @@ export class TestService {
       },
       create: {
         username: 'admin',
-        password: 'admin',
+        password: await bcrypt.hash('admin', 10),
         name: 'Admin',
         token: 'admin',
       },

@@ -3,7 +3,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "username" : "",
+  "username" : "NullHakim",
   "name" : "Faridlan Nullhakim",
   "password" : "rahasia"
 }
@@ -15,7 +15,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "username" : "Nullhakim",
+  "username" : "NullHakim",
   "password" : "rahasia"
 }
 
@@ -125,3 +125,26 @@ Authorization: 051e0dd1-7ef4-43c0-866d-f3c0b2f212f6
 DELETE http://localhost:3000/api/contacts/91/addresses/23
 Accept: application/json
 Authorization: 051e0dd1-7ef4-43c0-866d-f3c0b2f212f6
+
+
+### Login Admin
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username" : "admin",
+  "password" : "admin"
+}
+
+### Create Seeder
+POST http://localhost:3000/api/seeder/run
+Content-Type: application/json
+Accept: application/json
+Authorization: 09342642-a324-44b2-8da2-321e93c6e822
+
+### Clear Seeder
+DELETE http://localhost:3000/api/seeder/clear
+Content-Type: application/json
+Accept: application/json
+Authorization: 3101d57d-a8bd-4675-be3e-7cd23462f272
