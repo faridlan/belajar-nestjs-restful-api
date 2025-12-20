@@ -5,7 +5,7 @@ import {
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
 import { UserWebBaseResponse } from 'src/dto/user.dto';
-import { ApiSecuritySwagger } from './api-utils.swagger';
+import { ApiSecuritySwagger } from '../api-utils.swagger';
 
 export function CurrentUserSwagger() {
   return applyDecorators(

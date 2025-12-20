@@ -5,7 +5,7 @@ import {
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
 import { LoginWebResponse } from 'src/dto/user.dto';
-import { ApiBadRequestResponseSwagger } from './api-utils.swagger';
+import { ApiBadRequestResponseSwagger } from '../api-utils.swagger';
 
 export function LoginSwagger() {
   return applyDecorators(

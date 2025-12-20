@@ -1,7 +1,7 @@
 import { applyDecorators } from '@nestjs/common';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { UserWebBaseResponse } from 'src/dto/user.dto';
-import { ApiBadRequestResponseSwagger } from './api-utils.swagger';
+import { ApiBadRequestResponseSwagger } from '../api-utils.swagger';
 
 export function RegisterUserSwagger() {
   return applyDecorators(

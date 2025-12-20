@@ -1,22 +1,22 @@
-import { applyDecorators } from '@nestjs/common';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import {
-  ApiSecuritySwagger,
+  ApiNotFoundResponseSwagger,
   ApiUnauthorizedResponseSwagger,
 } from '../api-utils.swagger';
+import { applyDecorators } from '@nestjs/common';
 
-export function DeleteUserSwagger() {
+export function DeleteContactSwagger() {
   return applyDecorators(
-    ApiSecuritySwagger(),
     ApiOperation({
-      summary: 'Delete User',
-      description: 'Delete user information.',
+      summary: 'Delete Contact',
+      description: 'Delete a contact by its ID.',
     }),
     ApiResponse({
       status: 200,
-      description: 'Successful user delete',
+      description: 'Contact deleted successfully',
       example: { data: 'True' },
     }),
+    ApiNotFoundResponseSwagger(),
     ApiUnauthorizedResponseSwagger(),
   );
 }

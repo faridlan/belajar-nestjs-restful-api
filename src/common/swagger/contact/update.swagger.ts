@@ -1,25 +1,25 @@
 import { applyDecorators } from '@nestjs/common';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { UserWebBaseResponse } from 'src/dto/user.dto';
+import { ContactWebResponse } from 'src/dto/contact.dto';
 import {
   ApiBadRequestResponseSwagger,
-  ApiSecuritySwagger,
+  ApiNotFoundResponseSwagger,
   ApiUnauthorizedResponseSwagger,
 } from '../api-utils.swagger';
 
-export function UpdateUserSwagger() {
+export function UpdateContactRequestSwagger() {
   return applyDecorators(
-    ApiSecuritySwagger(),
     ApiOperation({
-      summary: 'Update User',
-      description: 'Update user information.',
+      summary: 'Update Contact Request',
+      description: 'Schema for updating a contact.',
     }),
     ApiResponse({
       status: 200,
-      description: 'Successful user update',
-      type: UserWebBaseResponse,
+      description: 'Update contact request schema',
+      type: ContactWebResponse,
     }),
     ApiBadRequestResponseSwagger(),
+    ApiNotFoundResponseSwagger(),
     ApiUnauthorizedResponseSwagger(),
   );
 }
