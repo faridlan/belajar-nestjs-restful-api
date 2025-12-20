@@ -101,4 +101,25 @@ export class TestService {
       },
     });
   }
+
+  async createAdmin() {
+    await this.prismaService.user.upsert({
+      where: {
+        username: 'admin',
+      },
+      update: {
+        token: 'admin', // ensure token is always valid
+      },
+      create: {
+        username: 'admin',
+        password: 'admin',
+        name: 'Admin',
+        token: 'admin',
+      },
+    });
+  }
+
+  async getUsers() {
+    return this.prismaService.user.findMany();
+  }
 }

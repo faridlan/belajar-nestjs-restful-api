@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "username": "john",
+      "password": "password123",
+      "name": "John Doe",
+      "contacts": [
+        {
+          "first_name": "Alice",
+          "last_name": "Smith",
+          "email": "alice@mail.com",
+          "phone": "081111111",
+          "addresses": [
+            {
+              "street": "Street 1",
+              "city": "Jakarta",
+              "province": "DKI Jakarta",
+              "country": "Indonesia",
+              "postal_code": "12345"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "username": "jane",
+      "password": "password123",
+      "name": "Jane Doe",
+      "contacts": [
+        {
+          "first_name": "Bob",
+          "email": "bob@mail.com",
+          "addresses": [
+            {
+              "country": "Indonesia",
+              "postal_code": "54321"
+            },
+            {
+              "street": "Second Street",
+              "country": "Indonesia",
+              "postal_code": "67890"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
